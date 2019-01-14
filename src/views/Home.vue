@@ -1,6 +1,16 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="../assets/logo.png">
+  <q-page class="">
+    <div>
+      <p>Hi {{ name }}! You have rented <strong>0</strong> bags</p>
+    </div>
+
+    <q-btn>
+      Rent a bag
+    </q-btn>
+
+    <q-btn>
+      Return a bag
+    </q-btn>
   </q-page>
 </template>
 
@@ -9,6 +19,11 @@
 
 <script>
 export default {
-  name: 'PageHome'
+  name: 'PageHome',
+  data () {
+    return {
+      name: 'User'
+    }
+  }
 }
 </script>

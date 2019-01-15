@@ -11,7 +11,10 @@
     </div>
     <div v-else>Something went wrong</div>
 
-    <p>{{ activeData.bottomText }}</p>
+    <p>{{ activeData.bottomText }} <span v-if="viewPage === 3">{{ loanExpiry }}</span> </p>
+    <div v-if="viewPage === 3">
+      <q-btn @click="$router.replace('/rentals')">See my Rentals</q-btn>
+    </div>
   </div>
 </template>
 
@@ -41,7 +44,8 @@ export default {
   components: { QRCode },
   data () {
     return {
-      viewPage: 1
+      viewPage: 1,
+      loanExpiry: '30 Jan 2019'
     }
   },
   computed: {

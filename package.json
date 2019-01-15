@@ -12,6 +12,7 @@
     "quasar-framework": "^0.17.0",
     "register-service-worker": "^1.5.2",
     "vue": "^2.5.21",
+    "vue-qriously": "^1.1.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

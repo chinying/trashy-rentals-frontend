@@ -4,11 +4,11 @@
       <p>Hi {{ name }}! You have rented <strong>0</strong> bags</p>
     </div>
 
-    <q-btn>
+    <q-btn @click="$router.replace('/rent')">
       Rent a bag
     </q-btn>
 
-    <q-btn>
+    <q-btn @click="$router.replace('/return')">
       Return a bag
     </q-btn>
   </q-page>

@@ -36,7 +36,7 @@ const viewPageContents = [
     header: 'Bag dispensed. \nEnjoy your shopping!',
     image: '',
     bottomText: 'Return your bag at the dropoff point by '
-  },
+  }
 ]
 
 export default {

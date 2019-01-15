@@ -10,7 +10,7 @@
       Page 3
     </div>
     <div v-else>Something went wrong</div>
-    
+
     <p>{{ activeData.bottomText }} <span v-if="viewPage === 3"> {{ userPoints }} </span> points. </p>
     <div v-if="viewPage === 3">
       <q-btn>Report loss of bags</q-btn>
@@ -36,7 +36,7 @@ const viewPageContents = [
     header: 'Return success. \nYou are a champ!',
     image: '',
     bottomText: 'You have earned '
-  },
+  }
 ]
 
 export default {

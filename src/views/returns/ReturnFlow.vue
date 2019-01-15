@@ -1,7 +1,7 @@
 <template>
   <div class="returns-container">
     <h3>{{ activeData.header }}</h3>
-    <QRCode v-if="viewPage === 1" action="loan" @click.native="viewPage++" />
+    <QRCode v-if="viewPage === 1" action="return" @click.native="viewPage++" />
     <div v-else-if="viewPage === 2">
       Page 2
       <button @click="viewPage = 3">Temp button</button>

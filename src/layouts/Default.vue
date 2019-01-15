@@ -59,7 +59,9 @@
     </q-layout-drawer>
 
     <q-page-container>
-      <router-view />
+      <div class="default-body">
+        <router-view />
+      </div>
     </q-page-container>
   </q-layout>
 </template>
@@ -81,4 +83,6 @@ export default {
 </script>
 
 <style>
+.default-body {
+}
 </style>

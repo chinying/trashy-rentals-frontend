@@ -1,9 +1,13 @@
 <template>
-  <div class="rentals-container">
+  <div class="rentals-container center-contents">
     <h3>{{ activeData.header }}</h3>
     <QRCode v-if="viewPage === 1" action="loan" @click.native="viewPage++" />
     <div v-else-if="viewPage === 2">
-      Page 2
+      <img src="@/assets/rentals/bag-rent.png"
+        srcset="@/assets/rentals/bag-rent@2x.png 2x,
+             @/assets/rentals/bag-rent@3x.png 3x"
+        class="bag_rent" />
+        <br />
       <button @click="viewPage = 3">Temp button</button>
     </div>
     <div v-else-if="viewPage === 3">
@@ -13,7 +17,15 @@
 
     <p>{{ activeData.bottomText }} <span v-if="viewPage === 3">{{ loanExpiry }}</span> </p>
     <div v-if="viewPage === 3">
-      <q-btn @click="$router.replace('/rentals')">See my Rentals</q-btn>
+      <div>
+        <img src="@/assets/smiley.png"
+          srcset="@/assets/smiley@2x.png 2x,
+            @/assets/smiley@3x.png 3x"
+          class="smiley">
+      </div>
+      <div>
+        <q-btn @click="$router.replace('/rentals')">See my Rentals</q-btn>
+      </div>
     </div>
   </div>
 </template>

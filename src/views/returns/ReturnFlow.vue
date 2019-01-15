@@ -1,13 +1,24 @@
 <template>
-  <div class="returns-container">
+  <div class="returns-container center-contents">
     <h3>{{ activeData.header }}</h3>
     <QRCode v-if="viewPage === 1" action="return" @click.native="viewPage++" />
+
     <div v-else-if="viewPage === 2">
-      Page 2
+      <img src="@/assets/returns/bag-return-bag.png"
+        srcset="@/assets/returns/bag-return-bag@2x.png 2x,
+          @/assets/returns/bag-return-bag@3x.png 3x"
+        class="bag_returnBag" />
+        <br />
       <button @click="viewPage = 3">Temp button</button>
     </div>
+
     <div v-else-if="viewPage === 3">
-      Page 3
+      <div>
+        <img src="@/assets/smiley.png"
+          srcset="@/assets/smiley@2x.png 2x,
+            @/assets/smiley@3x.png 3x"
+          class="smiley">
+      </div>
     </div>
     <div v-else>Something went wrong</div>
 

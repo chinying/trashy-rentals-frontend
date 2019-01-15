@@ -4,5 +4,11 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+.center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 </style>

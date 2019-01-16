@@ -43,7 +43,7 @@
             <q-item-main label="My Rentals" />
           </q-item>
 
-          <q-item @click.native="openURL('#')">
+          <q-item>
             <q-item-side icon="location_on" />
             <q-item-main label="Search"></q-item-main>
           </q-item>
@@ -84,5 +84,9 @@ export default {
 .greenify {
   background: $trashyGreen !important;
   color: white;
+}
+
+.default-body {
+  padding: 1.5em;
 }
 </style>

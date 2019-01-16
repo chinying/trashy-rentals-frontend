@@ -19,7 +19,7 @@
       </div>
       <div>Change</div>
     </div>
-    
+
     <div class="personal-info phoneno-contents">
       <div>
         <span class="grey-text">Email</span>
@@ -51,9 +51,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.profile-container {
-  padding: 1.5em;
-}
 .personal-info {
   margin-top: 2em;
   display: flex;

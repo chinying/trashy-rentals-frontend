@@ -33,7 +33,7 @@
             <q-item-main label="Rent or Return" />
           </q-item>
 
-          <q-item @click.native="openURL('#')">
+          <q-item to="/profile">
             <q-item-side icon="account_box" />
             <q-item-main label="My Profile"></q-item-main>
           </q-item>

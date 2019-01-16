@@ -6,6 +6,7 @@ import About from './views/About.vue'
 import Rentals from './components/Rentals.vue'
 import RentalFlow from './views/rentals/RentalFlow.vue'
 import ReturnFlow from './views/returns/ReturnFlow.vue'
+import Profile from './views/Profile.vue'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
           path: '/return',
           name: 'return',
           component: ReturnFlow
+        },
+        {
+          path: '/profile',
+          name: 'profile',
+          component: Profile
         }
       ]
     }

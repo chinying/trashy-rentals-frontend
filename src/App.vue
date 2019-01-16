@@ -11,4 +11,10 @@
   align-items: center;
   flex-direction: column;
 }
+
+.grey-text {
+  font-size: .9em;
+  font-weight: 300;
+  color: #333;
+}
 </style>

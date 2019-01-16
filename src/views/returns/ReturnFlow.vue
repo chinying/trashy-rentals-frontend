@@ -7,9 +7,9 @@
       <img src="@/assets/returns/bag-return-bag.png"
         srcset="@/assets/returns/bag-return-bag@2x.png 2x,
           @/assets/returns/bag-return-bag@3x.png 3x"
+          @click="viewPage = 3"
         class="bag_returnBag" />
         <br />
-      <button @click="viewPage = 3">Temp button</button>
     </div>
 
     <div v-else-if="viewPage === 3">
@@ -24,7 +24,7 @@
 
     <p>{{ activeData.bottomText }} <span v-if="viewPage === 3"> {{ userPoints }} </span> points. </p>
     <div v-if="viewPage === 3">
-      <q-btn>Report loss of bags</q-btn>
+      <q-btn class="full-width">Report loss of bags</q-btn>
     </div>
   </div>
 </template>

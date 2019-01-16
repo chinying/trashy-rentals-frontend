@@ -1,9 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-layout-header>
-      <q-toolbar
-        color="primary"
-      >
+      <q-toolbar class="greenify">
         <q-btn
           flat
           dense
@@ -82,7 +80,9 @@ export default {
 }
 </script>
 
-<style>
-.default-body {
+<style lang="scss" scoped>
+.greenify {
+  background: $trashyGreen !important;
+  color: white;
 }
 </style>

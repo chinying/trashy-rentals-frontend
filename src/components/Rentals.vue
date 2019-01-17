@@ -1,5 +1,6 @@
 <template>
   <div class="rentals-container">
+    <Loader v-show="loading" text="Loading" />
     <h3>My Rentals</h3>
     <div>
       <p>You have loaned <strong>{{ rentals.length }}</strong> bags</p>
@@ -25,10 +26,12 @@
 
 <script>
 import axios from 'axios'
+import Loader from '@/components/Loader.vue'
 let { VUE_APP_BACKEND_URL: BACKEND_URL } = process.env
 
 export default {
   name: 'Rentals',
+  components: { Loader },
   data () {
     return {
       errorMessage: '',

@@ -5,6 +5,8 @@
       <p>You have loaned <strong>{{ rentals.length }}</strong> bags</p>
     </div>
 
+    <p v-if="errorMessage.length > 0">{{ errorMessage }}</p>
+
     <div class="rental-bags-list">
       <div v-for="(rental, index) in rentals" :key="index"
         class="rental-bag-item">
@@ -14,7 +16,7 @@
         </div>
         <div class="bag-rental-item-right">
           <p class="rental-status">{{ rental.status }}</p>
-          {{ rental.date }}
+          {{ rental.expiryDate }}
         </div>
       </div>
     </div>
@@ -22,23 +24,37 @@
 </template>
 
 <script>
+import axios from 'axios'
+let { VUE_APP_BACKEND_URL: BACKEND_URL } = process.env
+
 export default {
   name: 'Rentals',
   data () {
     return {
-      rentals: [
-        {
-          'location': 'Galaxis Cold Storage',
-          'date': '14 Jan',
-          'status': 'Not returned'
-        },
-        {
-          'location': 'Jurong East Giant',
-          'date': '15 Jan',
-          'status': 'Not returned'
-        }
-      ]
+      errorMessage: '',
+      rentals: [],
+      loading: false
     }
+  },
+  beforeMount () {
+    this.$data.rentals = []
+    this.$data.loading = true
+    axios.get(`${BACKEND_URL}/loans/1`)
+      .then((data) => {
+        console.log(data)
+        let rentals = data.data.map(d => {
+          d.location = 'Galaxis Cold Storage'
+          return d
+        })
+        this.$data.rentals = rentals
+      })
+      .catch((err) => {
+        console.error(err)
+        this.$data.errorMessage = err.message
+      })
+      .finally(() => {
+        this.$data.loading = false
+      })
   }
 }
 </script>

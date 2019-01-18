@@ -2,17 +2,17 @@
   <div class="rentals-container">
     <Loader v-show="loading" text="Loading" />
     <h3>My Rentals</h3>
-    <div>
+    <div v-if="!loading">
       <p>You have loaned <strong>{{ rentals.length }}</strong> bags</p>
     </div>
 
     <p v-if="errorMessage.length > 0">{{ errorMessage }}</p>
 
-    <div class="rental-bags-list">
+    <div class="rental-bags-list" v-if="!loading">
       <div v-for="(rental, index) in rentals" :key="index"
         class="rental-bag-item">
         <div class="bag-rental-item-left">
-          <p>Bag #{{ index }}</p>
+          <p>Bag #{{ index + 1 }}</p>
           <p>{{ rental.location }}</p>
         </div>
         <div class="bag-rental-item-right">
